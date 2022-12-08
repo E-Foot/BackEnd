@@ -20,6 +20,7 @@ public class Stade {
     private String description;
     private String image;
     private boolean supporteur;
+    private double prixParHeure;
 
     @OneToMany
     @JoinTable(name = "liste_joueurs_dans_stade")
