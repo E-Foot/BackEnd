@@ -35,5 +35,9 @@ public class ComplexeServiceImpl implements ComplexeService {
         complexeRepository.deleteById(complexeId);
     }
 
+    @Override
+    public Complexe findComplexeByStades(List<Stade> stadeList) {
+        return complexeRepository.findComplexeByListStadesIn(stadeList);
+    }
 
 }

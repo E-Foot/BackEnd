@@ -37,5 +37,8 @@ public class ComplexeController {
         return "Deleted Successfully";
     }
 
-
+    @GetMapping("/complexe/stades")
+    public Complexe findComplexeByStades(@RequestBody List<Stade> stadeList) {
+        return complexeService.findComplexeByStades(stadeList);
+    }
 }
