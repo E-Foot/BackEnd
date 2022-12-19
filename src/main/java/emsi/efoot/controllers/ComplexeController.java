@@ -41,4 +41,9 @@ public class ComplexeController {
     public Complexe findComplexeByStades(@RequestBody List<Stade> stadeList) {
         return complexeService.findComplexeByStades(stadeList);
     }
+
+    @GetMapping("/complexe/{complexeId}")
+    public Complexe findComplexeById(@PathVariable int complexeId){
+        return complexeService.findComplexeById(complexeId);
+    }
 }

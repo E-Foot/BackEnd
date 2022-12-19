@@ -11,4 +11,5 @@ import java.util.List;
 public interface ComplexeRepository extends JpaRepository<Complexe, Integer> {
 
     Complexe findComplexeByListStadesIn(List<Stade> stadeList);
+    Complexe findComplexeById(int complexeId);
 }

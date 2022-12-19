@@ -20,4 +20,6 @@ public interface ComplexeService {
     void deleteComplexeById(int complexeId);
 
     Complexe findComplexeByStades(List<Stade> stadeList);
+
+    Complexe findComplexeById(int complexeId);
 }

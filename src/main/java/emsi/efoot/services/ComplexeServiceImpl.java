@@ -40,4 +40,9 @@ public class ComplexeServiceImpl implements ComplexeService {
         return complexeRepository.findComplexeByListStadesIn(stadeList);
     }
 
+    @Override
+    public Complexe findComplexeById(int complexeId) {
+        return complexeRepository.findComplexeById(complexeId);
+    }
+
 }
