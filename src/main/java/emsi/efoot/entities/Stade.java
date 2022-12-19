@@ -25,8 +25,8 @@ public class Stade {
     @OneToMany
     @JoinTable(name = "liste_joueurs_dans_stade")
     private List<Joueur> listJoueurs;
-    @OneToMany
-    @JoinTable(name = "liste_reservation_dans_stade")
-    private List<Reservation> listReservations;
+
+    @ManyToOne
+    private Complexe complexe;
 
 }
