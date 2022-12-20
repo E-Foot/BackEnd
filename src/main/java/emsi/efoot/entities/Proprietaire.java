@@ -1,9 +1,6 @@
 package emsi.efoot.entities;
 
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -27,4 +24,7 @@ public class Proprietaire extends Utilisateur {
     @OneToMany
     @JoinTable(name = "liste_paiements_pour_proprietaire")
     private List<Paiement> listPaiements;
+
+    @OneToOne
+    private Evenement evenement;
 }

@@ -1,9 +1,6 @@
 package emsi.efoot.entities;
 
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -29,4 +26,11 @@ public class Joueur extends Utilisateur {
     @OneToMany
     @JoinTable(name = "liste_reservations_pour_joueur")
     private List<Reservation> listReservations;
+
+    @ManyToMany
+    @JoinTable(name = "AnnoncesParJoueurs",
+        joinColumns = @JoinColumn(name = "joueur_id"),
+        inverseJoinColumns = @JoinColumn(name = "annonce_id"))
+    private List<Annonce> annonceList;
+
 }
