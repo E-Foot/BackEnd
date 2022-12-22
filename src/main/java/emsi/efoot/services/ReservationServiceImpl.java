@@ -23,7 +23,10 @@ public class ReservationServiceImpl implements ReservationService {
 
         return reservationRepository.save(reservation);
     }
-
+    @Override
+    public List<Reservation> getAnnonces() {
+        return reservationRepository.getAnnonces();
+    }
     @Override
     public List<Reservation> listReservations() {
 
