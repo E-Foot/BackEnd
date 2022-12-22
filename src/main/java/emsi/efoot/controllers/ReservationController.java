@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api")
 public class ReservationController {
@@ -21,7 +21,7 @@ public class ReservationController {
 
     // Save operation
 
-    @PostMapping("/reservations/save")
+    @PostMapping("/reservations")
 
     public Reservation saveReservations(@RequestBody Reservation reservation /*,Stade stade*/ ) {
        // reservation.setStade(stade);
