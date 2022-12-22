@@ -13,8 +13,8 @@ public interface ReservationService {
     List<Reservation> listReservations();
 
     // Update operation
-    Reservation updateReservation(Reservation reservation, int reservationId);
-
+    void updateReservation(Reservation reservation, int reservationId);
+    List<Reservation> getAnnonces();
     // Delete operation
     void deleteReservationById(int reservationId);
 

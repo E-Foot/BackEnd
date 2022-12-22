@@ -25,4 +25,6 @@ public class Reservation {
     private double prix;
     @ManyToOne
     private Stade stade;
+    private int nbr_j_m;
+    private boolean anonceIschecked;
 }

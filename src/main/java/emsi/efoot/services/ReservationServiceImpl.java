@@ -16,6 +16,11 @@ public class ReservationServiceImpl implements ReservationService {
 
     @Override
     public Reservation saveReservation(Reservation reservation) {
+        if(reservation.getNbr_j_m()==0){
+            reservation.setAnonceIschecked(true);
+        }else reservation.setAnonceIschecked(false);
+
+
         return reservationRepository.save(reservation);
     }
 
@@ -26,12 +31,35 @@ public class ReservationServiceImpl implements ReservationService {
     }
 
     @Override
-    public Reservation updateReservation(Reservation reservation, int reservationId) {
-        return null;
+    public void updateReservation(Reservation reservation, int reservationId) {
+
+        Reservation reservation1 = reservationRepository.getById(reservationId);
+        if (reservation1 != null){
+            reservation1.setDateReservation(reservation.getDateReservation());
+            reservation1.setHeureReservation(reservation.getHeureReservation());
+            reservation1.setId(reservation.getId());
+            reservation1.setPrix(reservation.getPrix());
+            reservation1.setDuree(reservation.getDuree());
+            reservation1.setStade(reservation.getStade());
+            reservation.setAnonceIschecked(reservation.isAnonceIschecked());
+            reservation.setNbr_j_m(reservation.getNbr_j_m());
+
+
+
+
+            reservationRepository.save(reservation1);
+
+
+
     }
+
+    }
+
+
 
     @Override
     public void deleteReservationById(int reservationId) {
         reservationRepository.deleteById(reservationId);
     }
 }
+

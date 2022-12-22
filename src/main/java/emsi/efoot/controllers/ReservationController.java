@@ -37,6 +37,11 @@ public class ReservationController {
     public List<Reservation> listReservations() {
         return reservationService.listReservations();
     }
+    @GetMapping("/annonces")
+
+    public List<Reservation> listAnnonces() {
+        return reservationService.getAnnonces();
+    }
 
     // Delete operation
     @DeleteMapping("/reservations/{id}")
