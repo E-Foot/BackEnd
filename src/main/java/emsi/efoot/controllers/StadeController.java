@@ -1,14 +1,16 @@
 package emsi.efoot.controllers;
 
 import emsi.efoot.entities.Stade;
+import emsi.efoot.entities.Complexe;
 import emsi.efoot.services.StadeService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api")
 public class StadeController {
@@ -37,6 +39,11 @@ public class StadeController {
     public String deleteStadeById(@PathVariable("id") int stadeId) {
         stadeService.deleteStadeById(stadeId);
         return "Deleted Successfully";
+    }
+
+    @GetMapping("/stade/{id}")
+    public Optional<Stade> getStadeById(@PathVariable("id") int stadeId){
+        return stadeService.getStadeById(stadeId);
     }
 
 }

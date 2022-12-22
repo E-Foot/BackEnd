@@ -3,6 +3,7 @@ package emsi.efoot.services;
 import emsi.efoot.entities.Stade;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface StadeService {
 
@@ -17,5 +18,9 @@ public interface StadeService {
 
     // Delete operation
     void deleteStadeById(int stadeId);
+
+    Optional<Stade> getStadeById(int stadeId);
+
+    Stade getById(Long id);
 
 }

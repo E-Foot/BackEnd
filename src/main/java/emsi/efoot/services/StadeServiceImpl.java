@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StadeServiceImpl implements StadeService {
@@ -24,6 +25,7 @@ public class StadeServiceImpl implements StadeService {
         return (List<Stade>) stadeRepository.findAll();
     }
 
+
     @Override
     public Stade updateStade(Stade stade, int stadeId) {
         return null;
@@ -32,5 +34,16 @@ public class StadeServiceImpl implements StadeService {
     @Override
     public void deleteStadeById(int stadeId) {
         stadeRepository.deleteById(stadeId);
+    }
+
+    @Override
+    public Optional<Stade> getStadeById(int stadeId) {
+        return stadeRepository. findById(stadeId);
+    }
+
+    @Override
+    public Stade getById(Long id) {
+
+        return stadeRepository.getById(Math.toIntExact(id));
     }
 }

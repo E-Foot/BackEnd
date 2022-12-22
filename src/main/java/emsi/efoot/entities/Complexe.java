@@ -23,4 +23,6 @@ public class Complexe {
     @OneToMany
     @JoinTable(name = "liste_stade_dans_complexe")
     private List<Stade> listStades;
+
+
 }
