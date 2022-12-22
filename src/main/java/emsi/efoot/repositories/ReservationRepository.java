@@ -9,5 +9,6 @@ import java.util.List;
 @RepositoryRestResource
 public interface ReservationRepository extends JpaRepository<Reservation, Integer> {
 
-
+    @Query("select r from Reservation r where r.anonceIschecked=false  ")
+    List<Reservation> getAnnonces();
 }
