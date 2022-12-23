@@ -1,5 +1,7 @@
 package emsi.efoot.entities;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,7 +22,7 @@ public class Complexe {
     private String adresse;
     @OneToOne
     private Proprietaire proprietaire;
-    @OneToMany
-    @JoinTable(name = "liste_stade_dans_complexe")
+
+    @OneToMany(mappedBy = "complexe")
     private List<Stade> listStades;
 }
