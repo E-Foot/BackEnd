@@ -46,4 +46,9 @@ public class SponsorServiceImpl implements SponsorService {
 
         return sponsorRepository.getById(Math.toIntExact(id));
     }
+
+    @Override
+    public List<Sponsor> findSponsorsByProprietaire(int idProprietaire) {
+        return sponsorRepository.findByProprietaireId(idProprietaire);
+    }
 }

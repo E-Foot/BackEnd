@@ -24,4 +24,6 @@ public interface SponsorService {
 
     Sponsor getById(Long id);
 
+    List<Sponsor> findSponsorsByProprietaire(int idProprietaire);
+
 }

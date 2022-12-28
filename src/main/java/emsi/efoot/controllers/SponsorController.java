@@ -44,4 +44,8 @@ public class SponsorController {
         return sponsorService.getSponsorById(sponsorId);
     }
 
+    @GetMapping("/sponsors/{idProprietaire}")
+    public List<Sponsor> findSponsorsByProprietaire(@PathVariable int idProprietaire) {
+        return sponsorService.findSponsorsByProprietaire(idProprietaire);
+    }
 }
