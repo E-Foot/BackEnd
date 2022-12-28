@@ -27,4 +27,10 @@ public class Proprietaire extends Utilisateur {
     @OneToMany
     @JoinTable(name = "liste_paiements_pour_proprietaire")
     private List<Paiement> listPaiements;
+
+    @OneToMany(mappedBy = "proprietaire")
+    private List<Evenement> evenementList;
+
+    @OneToMany(mappedBy = "proprietaire")
+    private List<Sponsor> sponsorList;
 }

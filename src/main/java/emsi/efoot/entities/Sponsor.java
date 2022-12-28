@@ -5,21 +5,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Evenement {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Sponsor {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private Date date;
+    private String libelle;
+    private String promotion;
     private String description;
-    private int nbr_equipe;
-    private String type;
     @ManyToOne
     private Proprietaire proprietaire;
-
 }
