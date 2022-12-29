@@ -1,5 +1,6 @@
 package emsi.efoot.services;
 
+import emsi.efoot.entities.Complexe;
 import emsi.efoot.entities.Evenement;
 
 import emsi.efoot.repositories.EvenementRepository;
@@ -45,5 +46,10 @@ public class EvenementServiceImpl implements EvenementService {
     public Evenement getById(Long id) {
 
         return evenementRepository.getById(Math.toIntExact(id));
+    }
+
+    @Override
+    public List<Evenement> getEvenementsByComplexe(Complexe complexe) {
+            return evenementRepository.findEvenementsByComplexe(complexe);
     }
 }

@@ -1,6 +1,7 @@
 package emsi.efoot.services;
 
 
+import emsi.efoot.entities.Complexe;
 import emsi.efoot.entities.Evenement;
 
 import java.util.List;
@@ -22,4 +23,6 @@ public interface EvenementService {
     Optional<Evenement> getEvenementById(int evenementId);
 
     Evenement getById(Long id);
+
+    List<Evenement> getEvenementsByComplexe(Complexe complexe);
 }

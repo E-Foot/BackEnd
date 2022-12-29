@@ -1,5 +1,6 @@
 package emsi.efoot.controllers;
 
+import emsi.efoot.entities.Complexe;
 import emsi.efoot.entities.Evenement;
 import emsi.efoot.services.EvenementService;
 import jakarta.validation.Valid;
@@ -41,5 +42,10 @@ public class EvenementController {
     @GetMapping("/evenement/{id}")
     public Optional<Evenement> getEvenementById(@PathVariable("id") int evenementId){
         return evenementService.getEvenementById(evenementId);
+    }
+
+    @GetMapping("/evenementsByComplexe")
+    public List<Evenement> getEvenementsByComplexe(@RequestBody Complexe complexe) {
+        return evenementService.getEvenementsByComplexe(complexe);
     }
 }
