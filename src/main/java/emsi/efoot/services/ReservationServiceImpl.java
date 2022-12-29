@@ -1,5 +1,6 @@
 package emsi.efoot.services;
 
+import emsi.efoot.entities.Proprietaire;
 import emsi.efoot.entities.Reservation;
 import emsi.efoot.repositories.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,6 +64,11 @@ public class ReservationServiceImpl implements ReservationService {
     @Override
     public void deleteReservationById(int reservationId) {
         reservationRepository.deleteById(reservationId);
+    }
+
+    @Override
+    public List<Reservation> findByProprietaireId(int proprietaireId) {
+        return reservationRepository.findByProprietaireId(proprietaireId);
     }
 }
 
