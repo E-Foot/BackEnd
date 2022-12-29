@@ -21,6 +21,16 @@ public class JoueurServiceImpl implements JoueurService{
     }
 
     @Override
+    public void UpdateEtatSignal(Boolean etat, long id) {
+        joueurRepository.UpdateEtatSignal(etat,id);
+    }
+
+    @Override
+    public Boolean getEtatSignalById(long id) {
+        return joueurRepository.getEtatSignalById(id);
+    }
+
+    @Override
     public void modifier(Joueur joueur, Long id) {
 
     }

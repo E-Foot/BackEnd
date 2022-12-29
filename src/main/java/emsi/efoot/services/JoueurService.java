@@ -11,7 +11,8 @@ import java.util.List;
 @Transactional
 public interface JoueurService {
     void ajouter(Joueur joueur );
-
+    void UpdateEtatSignal(Boolean etat, long id);
+    Boolean getEtatSignalById( long id);
     void modifier(Joueur joueur,Long id);
 
     void supprimer(Long id);
