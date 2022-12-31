@@ -49,7 +49,7 @@ public class EvenementServiceImpl implements EvenementService {
     }
 
     @Override
-    public List<Evenement> getEvenementsByComplexe(Complexe complexe) {
-            return evenementRepository.findEvenementsByComplexe(complexe);
+    public List<Evenement> getEvenementsByComplexe(int id) {
+            return evenementRepository.findEvenementsByComplexe(id);
     }
 }
