@@ -1,5 +1,6 @@
 package emsi.efoot.controllers;
 
+import emsi.efoot.entities.Proprietaire;
 import emsi.efoot.entities.Reservation;
 import emsi.efoot.entities.Stade;
 import emsi.efoot.services.ReservationService;
@@ -49,6 +50,11 @@ public class ReservationController {
     public String deleteReservationById(@PathVariable("id") int reservationId) {
         reservationService.deleteReservationById(reservationId);
         return "Deleted Successfully";
+    }
+
+    @GetMapping("/reservationsParProprietaire/{proprietaireId}")
+    public List<Reservation> getReservationsByProprietaire(@PathVariable int proprietaireId) {
+        return reservationService.findByProprietaireId(proprietaireId);
     }
 
 }

@@ -20,8 +20,8 @@ import java.util.List;
 @AllArgsConstructor
 public class Joueur extends Utilisateur {
     private Date dateCreation;
-    private String etatSignal;
-    private String etatBlockage;
+    private Boolean etatSignal;
+    private Boolean etatBlockage;
 
     @OneToMany
     @JoinTable(name = "liste_paiements_pour_joueur")

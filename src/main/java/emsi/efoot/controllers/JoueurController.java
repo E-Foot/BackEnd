@@ -15,7 +15,13 @@ import java.util.List;
 public class JoueurController {
     @Autowired
     JoueurService joueurService;
+    @PutMapping("/updateEtatSignal/{id}")
+    public void updateSyndic(@PathVariable(value = "id") long id) {
 
+     if(joueurService.getEtatSignalById(id)==true){
+         joueurService.UpdateEtatSignal(true,id);
+     }else    joueurService.UpdateEtatSignal(false,id);
+    }
 
 
     @PostMapping
