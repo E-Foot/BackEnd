@@ -21,8 +21,8 @@ import java.util.List;
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Proprietaire extends Utilisateur {
     private Date dateCreation;
-    private String etatSignal;
-    private String etatBlockage;
+    private Boolean etatSignal;
+    private Boolean etatBlockage;
     private String cin;
     @OneToOne(mappedBy = "proprietaire")
     @JsonManagedReference
