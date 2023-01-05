@@ -46,4 +46,9 @@ public class StadeServiceImpl implements StadeService {
 
         return stadeRepository.getById(Math.toIntExact(id));
     }
+
+    @Override
+    public List<Stade> getStadesByComplexe(int idComplexe) {
+        return stadeRepository.findByComplexeId(idComplexe);
+    }
 }

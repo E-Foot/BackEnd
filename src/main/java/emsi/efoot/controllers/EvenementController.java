@@ -44,8 +44,8 @@ public class EvenementController {
         return evenementService.getEvenementById(evenementId);
     }
 
-    @GetMapping("/evenementsByComplexe")
-    public List<Evenement> getEvenementsByComplexe(@RequestBody Complexe complexe) {
-        return evenementService.getEvenementsByComplexe(complexe);
+    @GetMapping("/evenementsByComplexe/{id}")
+    public List<Evenement> getEvenementsByComplexe(@PathVariable int id) {
+        return evenementService.getEvenementsByComplexe(id);
     }
 }

@@ -9,6 +9,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface EvenementRepository extends JpaRepository<Evenement, Integer> {
-        @Query("SELECT e FROM Evenement e WHERE e.proprietaire.complexe = :complexe")
-        List<Evenement> findEvenementsByComplexe(@Param("complexe") Complexe complexe);
+        @Query("SELECT e FROM Evenement e WHERE e.proprietaire.complexe.id = :id")
+        List<Evenement> findEvenementsByComplexe(@Param("id") int id);
 }
