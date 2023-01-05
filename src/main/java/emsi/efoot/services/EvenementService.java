@@ -24,5 +24,5 @@ public interface EvenementService {
 
     Evenement getById(Long id);
 
-    List<Evenement> getEvenementsByComplexe(Complexe complexe);
+    List<Evenement> getEvenementsByComplexe(int id);
 }

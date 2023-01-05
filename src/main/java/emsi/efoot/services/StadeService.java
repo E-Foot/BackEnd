@@ -23,4 +23,6 @@ public interface StadeService {
 
     Stade getById(Long id);
 
+    List<Stade> getStadesByComplexe(int idComplexe);
+
 }

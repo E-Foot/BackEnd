@@ -46,4 +46,8 @@ public class StadeController {
         return stadeService.getStadeById(stadeId);
     }
 
+    @GetMapping("/stadesByComplexe/{idComplexe}")
+    public List<Stade> getStadesByComplexe(@PathVariable int idComplexe){
+        return stadeService.getStadesByComplexe(idComplexe);
+    }
 }
