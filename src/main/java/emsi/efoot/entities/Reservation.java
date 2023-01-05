@@ -15,7 +15,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+// @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +26,7 @@ public class Reservation {
     private String heureReservation;
     private double prix;
     @ManyToOne
-    @JsonBackReference
+    // @JsonBackReference
     private Stade stade;
     private int nbr_j_m;
     private boolean anonceIschecked;
